@@ -1,16 +1,21 @@
-# AI Startup Decision Board
+# Global Opportunity Radar
 
-Germany-focused AI SaaS opportunity dashboard.
+Almanya ve Türkiye odaklı, kanıt ve uygulanabilirlik tabanlı iş fırsatları panosu.
 
-## Compared ideas
-1. HandwerkOS AI
-2. Family CyberGuardian
-3. Germany Life Admin
+Bu repo, Global Business Opportunity Radar araştırma notlarını tek bir canlı yüzeyde toplar. Her fırsat için skor, wedge, hedef müşteri, gelir modeli, öldürücü risk ve ilk 30 gün testi bulunur.
 
-The site is intentionally static so it can be hosted directly with GitHub Pages without Vercel or a server.
+## İçerik
 
-## GitHub Pages
-Open repository **Settings → Pages**, choose **Deploy from a branch**, select **main** and **/(root)**, then save.
+- 16 fırsat: AI operasyon yazılımları, recovery ürünleri, güvenlik/uyum, programmatic SEO ve marketplace modelleri
+- Arama, kategori filtreleri ve skor/MVP/pazar sıralaması
+- Sağ panelde seçili fırsatın karar özeti
+- İlk üç bahis için conviction stack
+- Skor metodolojisi ve kaynak notları
 
-Expected URL after Pages is enabled:
-`https://atpsec.github.io/saas/`
+## Canlı adres
+
+GitHub Pages: https://atpsec.github.io/saas/
+
+## Not
+
+Skorlar yatırım tavsiyesi veya doğrulanmış pazar büyüklüğü değildir. Müşteri görüşmesi, ücretli pilot ve gerçek kullanım verisi geldikçe güncellenmesi gereken araştırma hipotezleridir.
