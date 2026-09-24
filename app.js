@@ -24,6 +24,7 @@ const opportunities = [
   { id:"cra-incident-desk", rank:22, score:83, name:"CRA Incident Desk / PSIRT OS", short:"CRA Incident Desk", category:"trust", label:"CRA / PSIRT", geography:"Türkiye → EU", model:"B2B SaaS · Incident fee", mvp:"4–6 hafta", color:"lime", summary:"Cyber Resilience Act kapsamındaki ürün zafiyetlerini, koordineli açıklamayı, kanıtları ve raporlama takvimini tek akışta yönetir.", wedge:"Genel ticket aracı değil; vulnerability intake’ten kanıtlı CRA bildirimi ve release takibine kadar PSIRT çalışma alanı.", customer:"IoT, yazılım, donanım ve Avrupa’ya ürün satan üreticiler.", revenue:"€1.000–4.000/ay · incident onboarding · advisory partners", risk:"Regülasyon takvimi, rapor doğruluğu ve güvenlik verisinin hassasiyeti.", next:"Bir üreticide sahte bir CVE senaryosunu intake → triage → evidence → bildirim akışında tatbik et.", source:"EU Cyber Resilience Act · PSIRT operasyon ihtiyacı" },
 ];
 
+opportunities.filter(item=>item.id!=="dentist-recall"&&item.rank>=17).forEach(item=>{item.rank+=1});
 const categoryNames={all:"Tümü",b2b:"B2B / operasyon",trust:"Güvenlik / uyum",commerce:"Commerce / recovery",media:"SEO / network"};
 const categoryGlyphs={b2b:"↗",trust:"◌",commerce:"⌁",media:"✳"};
 const brandDomains={
