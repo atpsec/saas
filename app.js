@@ -25,8 +25,16 @@ const opportunities = [
 
 const categoryNames={all:"Tümü",b2b:"B2B / operasyon",trust:"Güvenlik / uyum",commerce:"Commerce / recovery",media:"SEO / network"};
 const categoryGlyphs={b2b:"↗",trust:"◌",commerce:"⌁",media:"✳"};
+const brandDomains={
+  freight:"nshift.com",kanzlei:"neno.digital",fieldwork:"rentahuman.ai", "marketplace-recovery":"reclaimhq.com",
+  "ad-gatekeeper":"veriad.ai", "trust-it":"canivibecodeit.com", "host-it":"hetzner.com", gdpr:"anytype.io",
+  recommerce:"ecomid.com",creator:"trynearby.com",handwerker:"withasync.com",automate:"n8n.io",cheaper:"alternativeto.net",
+  "ai-replace":"openai.com", "private-workspace":"anytype.io",restaurant:"gastrokalk.com",labcompiler:"labcompiler.ai",
+  agentrank:"agentrank.ai", "data-act-gateway":"europa.eu",supilot:"xylem.com",specpulse:"ifs.com", "cra-incident-desk":"enisa.europa.eu"
+};
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[char]));
+const iconMarkup=item=>{const domain=brandDomains[item.id];const fallback=categoryGlyphs[item.category]||"•";if(!domain)return fallback;return `<img src="https://www.google.com/s2/favicons?domain=${domain}&sz=64" alt="" loading="lazy" referrerpolicy="no-referrer" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/><span class="glyph-fallback">${fallback}</span>`};
 let activeId="freight";let activeFilter="all";
 
 function scoreClass(score){return score>=90?"high":score>=85?"mid":"watch"}
@@ -38,7 +46,7 @@ function renderCards(){
   if(sort==="market") visible.sort((a,b)=>(b.geography.includes("Türkiye")?1:0)-(a.geography.includes("Türkiye")?1:0)||b.score-a.score);
   if(sort==="score") visible.sort((a,b)=>b.score-a.score);
   $("#result-count").textContent=visible.length;
-  $("#opportunity-grid").innerHTML=visible.length?visible.map(item=>`<button class="op-card ${activeId===item.id?"selected":""}" data-id="${item.id}" style="--card-accent:${item.color}"><div class="op-card-top"><span class="op-glyph ${item.color}">${categoryGlyphs[item.category]||"•"}</span><span class="op-rank">${String(item.rank).padStart(2,"0")}</span><span class="op-score ${scoreClass(item.score)}">${item.score}</span></div><div class="op-card-main"><span class="op-label">${esc(item.label)} · ${esc(item.geography)}</span><h3>${esc(item.name)}</h3><p>${esc(item.summary)}</p></div><div class="op-card-foot"><span>${esc(item.model)}</span><span>${esc(item.mvp)} <b>↗</b></span></div></button>`).join(""): `<div class="empty"><strong>Bu filtrede fırsat yok.</strong><span>Aramayı veya kategori filtresini değiştir.</span></div>`;
+  $("#opportunity-grid").innerHTML=visible.length?visible.map(item=>`<button class="op-card ${activeId===item.id?"selected":""}" data-id="${item.id}" style="--card-accent:${item.color}"><div class="op-card-top"><span class="op-glyph ${item.color}">${iconMarkup(item)}</span><span class="op-rank">${String(item.rank).padStart(2,"0")}</span><span class="op-score ${scoreClass(item.score)}">${item.score}</span></div><div class="op-card-main"><span class="op-label">${esc(item.label)} · ${esc(item.geography)}</span><h3>${esc(item.name)}</h3><p>${esc(item.summary)}</p></div><div class="op-card-foot"><span>${esc(item.model)}</span><span>${esc(item.mvp)} <b>↗</b></span></div></button>`).join(""): `<div class="empty"><strong>Bu filtrede fırsat yok.</strong><span>Aramayı veya kategori filtresini değiştir.</span></div>`;
   document.querySelectorAll(".op-card").forEach(card=>card.addEventListener("click",()=>{activeId=card.dataset.id;renderCards();renderInsight()}));
 }
 function renderInsight(){
