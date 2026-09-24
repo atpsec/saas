@@ -6,7 +6,8 @@ Bu repo, Global Business Opportunity Radar araştırma notlarını tek bir canl�
 
 ## İçerik
 
-- 16 fırsat: AI operasyon yazılımları, recovery ürünleri, güvenlik/uyum, programmatic SEO ve marketplace modelleri
+- 22 fırsat: AI operasyon yazılımları, recovery ürünleri, güvenlik/uyum, programmatic SEO, endüstriyel AI ve marketplace modelleri
+- Yeni sinyaller: LabCompiler TR, AgentRank, EU Data Act Access Gateway, SuPilot, SpecPulse Food ve CRA Incident Desk
 - Arama, kategori filtreleri ve skor/MVP/pazar sıralaması
 - Sağ panelde seçili fırsatın karar özeti
 - İlk üç bahis için conviction stack
